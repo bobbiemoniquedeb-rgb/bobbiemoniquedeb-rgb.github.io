@@ -204,6 +204,11 @@
   [data-theme="light"] .nav-links a { color:#7a6e65; }
   [data-theme="light"] .nav-links a:hover { color:#9a7060; }
 
+  /* Show quiz in hero on light mode */
+  [data-theme="light"] .off-clock-wrap { display:block !important; }
+  /* Hide about sidebar quiz in light mode */
+  [data-theme="light"] #about .section-sidebar .off-clock-wrap { display:none !important; }
+
   @media (max-width:900px) {
     /* NAV */
     nav { padding:1rem 1.25rem; }
@@ -262,6 +267,8 @@
     #showcase > div:first-child > div:last-child { padding:1.25rem; }
     #showcase > div:first-child { grid-template-columns:1fr; }
     #showcase > div:first-child > div:first-child { display:none; }
+    #showcase > div:first-child > div:last-child { flex-direction:column; align-items:flex-start; gap:1rem; padding:1.25rem; }
+    #showcase > div:first-child > div:last-child > div:last-child { align-self:flex-start; }
 
     /* CONTACT */
     .contact { grid-template-columns:1fr; min-height:auto; }
@@ -282,6 +289,7 @@
     .hero-name { font-size:clamp(2.5rem,12vw,4rem); }
     .photo-circle { width:140px !important; height:140px !important; }
   }
+  .exp-points li strong { color:var(--taupe); font-weight:700; letter-spacing:0.01em; }
 </style>
 </head>
 <body>
@@ -319,8 +327,8 @@
       <h1 class="hero-name">BOBBIE<span class="hero-name-accent">DEBARGE</span></h1>
       <p class="hero-subtitle">Turning audience insights and cultural trends into strategies that connect with communities.</p>
 
-      <!-- OFF THE CLOCK -->
-      <div class="off-clock-wrap" style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);max-width:420px;">
+      <!-- OFF THE CLOCK - hidden on desktop dark mode, shown in about sidebar -->
+      <div class="off-clock-wrap" style="display:none;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);max-width:420px;">
         <button onclick="toggleQuiz()" id="quiz-trigger" style="display:flex;align-items:center;gap:0.75rem;background:rgba(196,169,154,0.12);border:1px solid rgba(196,169,154,0.5);cursor:pointer;padding:0.6rem 1.2rem;text-align:left;width:fit-content;transition:all 0.3s;" onmouseover="this.style.background='rgba(196,169,154,0.16)';this.style.borderColor='var(--taupe)'" onmouseout="this.style.background='rgba(196,169,154,0.08)';this.style.borderColor='rgba(196,169,154,0.25)'">
           <span style="font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--warm-white);font-weight:500;">Off the clock</span>
           <span id="quiz-arrow" style="color:var(--taupe);font-size:0.85rem;transition:transform 0.3s;">&#8597;</span>
@@ -359,10 +367,31 @@
 
 <!-- ABOUT -->
 <section id="about" class="section-2col">
-  <div class="section-sidebar"><span class="section-label">About</span></div>
+  <div class="section-sidebar" style="flex-direction:column;justify-content:flex-start;gap:3rem;align-items:flex-end;">
+    <span class="section-label">About</span>
+    <!-- OFF THE CLOCK quiz in sidebar -->
+    <div class="off-clock-wrap" style="display:flex;flex-direction:column;align-items:flex-end;gap:0.75rem;max-width:160px;">
+      <button onclick="toggleQuiz()" id="quiz-trigger" style="display:flex;align-items:center;gap:0.5rem;background:rgba(196,169,154,0.12);border:1px solid rgba(196,169,154,0.5);cursor:pointer;padding:0.5rem 0.85rem;transition:all 0.3s;" onmouseover="this.style.background='rgba(196,169,154,0.2)'" onmouseout="this.style.background='rgba(196,169,154,0.12)'">
+        <span style="font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--warm-white);font-weight:500;white-space:nowrap;">Off the clock</span>
+        <span id="quiz-arrow" style="color:var(--taupe);font-size:0.8rem;">&#8597;</span>
+      </button>
+      <div id="sidebar-quiz" style="display:none;width:220px;text-align:left;">
+        <p style="font-family:'DM Serif Display',serif;font-size:0.9rem;color:var(--warm-white);line-height:1.4;margin-bottom:0.75rem;">Fact Check Me — which is false?</p>
+        <div style="display:flex;flex-direction:column;gap:0.4rem;" id="ttl-options-sidebar">
+          <button onclick="selectTTL2(this,false)" style="width:100%;text-align:left;padding:0.55rem 0.75rem;font-size:0.75rem;font-family:'DM Sans',sans-serif;background:rgba(196,169,154,0.06);border:1px solid rgba(196,169,154,0.18);color:var(--warm-white);cursor:pointer;transition:all 0.3s;line-height:1.4;">I'm a ceramic artist</button>
+          <button onclick="selectTTL(this,false)" style="width:100%;text-align:left;padding:0.55rem 0.75rem;font-size:0.75rem;font-family:'DM Sans',sans-serif;background:rgba(196,169,154,0.06);border:1px solid rgba(196,169,154,0.18);color:var(--warm-white);cursor:pointer;transition:all 0.3s;line-height:1.4;">My sister &amp; I shot a movie in HS</button>
+          <button onclick="selectTTL(this,true)" style="width:100%;text-align:left;padding:0.55rem 0.75rem;font-size:0.75rem;font-family:'DM Sans',sans-serif;background:rgba(196,169,154,0.06);border:1px solid rgba(196,169,154,0.18);color:var(--warm-white);cursor:pointer;transition:all 0.3s;line-height:1.4;">I've traveled to 50 countries</button>
+        </div>
+        <div id="ttl-result-sidebar" style="display:none;margin-top:0.75rem;padding:0.6rem 0.75rem;border-left:2px solid var(--taupe);background:rgba(196,169,154,0.08);">
+          <p id="ttl-result-text-sidebar" style="font-size:0.75rem;color:var(--warm-white);line-height:1.5;margin-bottom:0.4rem;"></p>
+          <button onclick="resetTTL2()" style="font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--taupe);background:transparent;border:1px solid var(--taupe);padding:0.3rem 0.7rem;cursor:pointer;">Play again &#8635;</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="section-body">
     <p class="about-intro">"I focus on content that feels authentic to the brand, using data-driven insights to shape strategies that connect and perform."</p>
-    <p class="about-body">Hi, I'm Bobbie. I'm a social media strategist with 6+ years of experience creating content and campaigns for digital-first brands. I bring together creative instincts and analytical thinking to build strategies that actually move the needle — from growing accounts by 200% YOY to leading influencer partnerships that turn campaigns into real community conversations.</p>
+    <p class="about-body">Hi, I'm Bobbie! I'm a social media strategist who loves bringing ideas to life through creative concepts and organized campaign execution. I focus on content that feels authentic to the brand, using data-driven insights to shape strategies that connect and perform.</p>
 
   </div>
 </section>
@@ -385,19 +414,19 @@
   <div class="section-body">
     <div class="exp-item">
       <div><p class="exp-date">Oct 2025 – May 2026</p><p class="exp-company">SocialGPT · Remote</p></div>
-      <div><h3 class="exp-role">Video Content Creator</h3><ul class="exp-points"><li>Ran A/B tests on ad creative and copy, raising click-through relevance for target audiences</li><li>Mapped audience segments from social analytics to refine targeting for paid campaigns</li><li>Created weekly social analytics reports highlighting top-performing posts for the marketing team</li></ul></div>
+      <div><h3 class="exp-role">Video Content Creator</h3><ul class="exp-points"><li>Developed scripted social content around trends and product education, driving a <strong>900%+</strong> lift in average views per post</li><li>Ran A/B tests on ad creative and copy, raising click-through relevance for target audiences</li><li>Created weekly social analytics reports highlighting top-performing posts for the marketing team</li></ul></div>
     </div>
     <div class="exp-item">
       <div><p class="exp-date">Jun 2022 – Present</p><p class="exp-company">Golden Hippo Media · Remote</p></div>
-      <div><h3 class="exp-role">Social Media Manager</h3><ul class="exp-points"><li>Lead organic social strategy, content planning, and publishing across multiple brand channels</li><li>Manage and mentor two specialists, aligning creative execution with brand strategy</li><li>Identify cultural trends, platform shifts, and emerging formats to increase reach and engagement</li><li>Lead creative conceiving and scriptwriting with founders, executives, and industry authorities</li></ul></div>
+      <div><h3 class="exp-role">Social Media Manager</h3><ul class="exp-points"><li>Lead organic social strategy and content creation across multiple consumer brands, overseeing content production from ideation and planning through publishing to ensure cohesive brand storytelling and execution</li><li>Manage and mentor two specialists, guiding creative development and aligning deliverables with brand strategy</li><li>Launched integrated social, web, and CRM campaigns driving <strong>$358K</strong> in attributed front-end revenue</li><li>Scaled organic social presence by <strong>220%</strong>, improving engagement-to-lead conversion</li></ul></div>
     </div>
     <div class="exp-item">
       <div><p class="exp-date">Dec 2021 – Oct 2022</p><p class="exp-company">SET Active · Beverly Hills, CA</p></div>
-      <div><h3 class="exp-role">Social Media Marketing Coordinator</h3><ul class="exp-points"><li>Managed day-to-day social content supporting product launches, seasonal campaigns, and community engagement</li><li>Conducted audience and competitor analysis to inform positioning and campaign targeting</li><li>Monitored engagement and surfaced insights from comments, DMs, and performance data</li></ul></div>
+      <div><h3 class="exp-role">Social Media Marketing Coordinator</h3><ul class="exp-points"><li>Supported strategic influencer and partnership initiatives designed to expand brand visibility and strengthen relationships with key collaborators</li><li>Conducted audience and competitor analysis to inform positioning, content optimization, and campaign targeting</li><li>Collaborated cross-functionally with creative and marketing teams to translate campaign briefs into data-driven content strategies aligned with business goals</li></ul></div>
     </div>
     <div class="exp-item">
       <div><p class="exp-date">Oct 2020 – Nov 2021</p><p class="exp-company">Flight Performance Agency · Remote</p></div>
-      <div><h3 class="exp-role">Influencer & Social Marketing Strategist</h3><ul class="exp-points"><li>Led influencer partnerships to boost brand visibility and social engagement</li><li>Owned organic social strategy and content creation, aligning client goals with audience insights</li><li>Tracked post performance and compiled social insights to inform ongoing content strategy</li></ul></div>
+      <div><h3 class="exp-role">Influencer & Social Marketing Strategist</h3><ul class="exp-points"><li>Led influencer partnerships to boost brand visibility and social engagement</li><li>Owned organic social strategy and content creation, aligning client goals and audience insights into cohesive execution</li><li>Managed daily community engagement to strengthen brand perception and loyalty</li></ul></div>
     </div>
   </div>
 </section>
@@ -423,8 +452,8 @@
       <!-- SLIDE 1: SocialGPT -->
       <div class="showcase-slide" style="align-items:start;">
         <div class="slide-info">
-          <p class="slide-brand">01 &#8212; SocialGPT</p>
-          <h3 class="slide-title">VIDEO CONTENT CREATOR</h3>
+          
+          <h3 class="slide-title">SOCIALGPT</h3>
           <p class="slide-body">Created AI-driven video content for digital-first audiences. Ran A/B tests on ad creative and copy, mapped audience segments, and delivered weekly performance reports.</p>
           <div class="slide-bullet"><span>→</span><span>A/B tested ad creative &amp; copy to raise click-through relevance</span></div>
           <div class="slide-bullet"><span>→</span><span>Mapped audience segments to refine paid campaign targeting</span></div>
@@ -468,9 +497,9 @@
       <!-- SLIDE 2: Beverly Hills MD -->
       <div class="showcase-slide">
         <div class="slide-info">
-          <p class="slide-brand">02 &#8212; Beverly Hills MD</p>
-          <h3 class="slide-title">SOCIAL MEDIA MANAGER</h3>
-          <p class="slide-body">Science-driven skincare brand. Led social and influencer strategy, collaborating with the marketing team to execute campaigns that surpassed end-of-year goals ahead of target.</p>
+          
+          <h3 class="slide-title">BEVERLY HILLS MD</h3>
+          <p class="slide-body">Beverly Hills MD is a beauty and skincare brand specializing in science-driven skincare solutions. I support social and influencer strategy while collaborating closely with the marketing team to execute high-performing campaigns that help surpass end-of-year social goals ahead of target.</p>
           <div class="slide-bullet"><span>→</span><span>Led organic social strategy, content planning &amp; publishing</span></div>
           <div class="slide-bullet"><span>→</span><span>Influencer partnerships driving measurable brand growth</span></div>
           <div class="slide-stat"><span class="slide-stat-label">Account Growth</span><span class="slide-stat-num">200% YOY</span></div>
@@ -497,9 +526,9 @@
       <!-- SLIDE 3: Gundry MD -->
       <div class="showcase-slide">
         <div class="slide-info">
-          <p class="slide-brand">03 &#8212; Gundry MD</p>
-          <h3 class="slide-title">COMMUNITY GROWTH &amp; INFLUENCER CAMPAIGNS</h3>
-          <p class="slide-body">Wellness brand by Dr. Steven Gundry. Co-managed social channels, driving community growth through influencer partnerships and data-driven campaigns.</p>
+          
+          <h3 class="slide-title">GUNDRY MD</h3>
+          <p class="slide-body">Gundry MD is a wellness brand owned by Dr. Steven Gundry, specializing in science-backed supplements and health solutions. I co-manage the brands social channels, growing the account by 15K+ followers and boosting engagement by 30% through influencer partnerships and data-driven campaigns.</p>
           <div class="slide-bullet"><span>→</span><span>Built creator partnerships that turned campaigns into authentic conversations</span></div>
           <div class="slide-bullet"><span>→</span><span>Identified cultural trends &amp; emerging formats to boost reach</span></div>
           <div style="display:flex;gap:2rem;margin-top:0.5rem;padding-top:0.75rem;border-top:1px solid rgba(196,169,154,0.1);">
@@ -513,9 +542,9 @@
       <!-- SLIDE 4: Roundhouse -->
       <div class="showcase-slide">
         <div class="slide-info">
-          <p class="slide-brand">04 &#8212; Roundhouse Provisions</p>
-          <h3 class="slide-title">BRAND GROWTH &amp; CAMPAIGN STRATEGY</h3>
-          <p class="slide-body">Emergency food &amp; supplement brand owned by Chuck Norris. Deployed innovative campaigns and influencer strategy, growing the account and meeting all year-end goals ahead of target.</p>
+          
+          <h3 class="slide-title">ROUNDHOUSE PROVISIONS</h3>
+          <p class="slide-body">Roundhouse Provisions is an emergency food and dietary supplement brand owned by Chuck Norris. Since taking over social, I've helped grow the account by 21K+ through innovative campaigns and influencer strategy. I worked closely with the marketing team to maximize campaign impact and successfully met all end-of-year goals ahead of target.</p>
           <div class="slide-bullet"><span>→</span><span>Established brand-to-brand collaboration frameworks</span></div>
           <div class="slide-bullet"><span>→</span><span>Maximized campaign impact through cross-functional collaboration</span></div>
           <div class="slide-stat"><span class="slide-stat-label">Follower Growth</span><span class="slide-stat-num">+21K</span></div>
@@ -618,11 +647,44 @@
 
   // Off the clock / Fact Check Me
   function toggleQuiz() {
-    const quiz = document.getElementById('hero-quiz');
+    const theme = document.documentElement.getAttribute('data-theme');
+    const quiz = theme === 'dark'
+      ? document.getElementById('sidebar-quiz')
+      : document.getElementById('hero-quiz');
     const arrow = document.getElementById('quiz-arrow');
     const open = quiz.style.display === 'none' || quiz.style.display === '';
     quiz.style.display = open ? 'block' : 'none';
-    arrow.textContent = open ? '↑' : '↕';
+    if (arrow) arrow.textContent = open ? '↑' : '↕';
+  }
+
+  function selectTTL2(btn, isLie) {
+    const btns = document.querySelectorAll('#ttl-options-sidebar button');
+    btns.forEach(b => { b.style.cursor='default'; b.onclick=null; });
+    const text = btn.textContent.trim();
+    let message = '';
+    btn.style.borderColor='#c4a99a';
+    btn.style.background='rgba(196,169,154,0.18)';
+    btn.style.color='var(--taupe)';
+    btns.forEach(b => { if (b!==btn) b.style.opacity='0.35'; });
+    if (isLie) {
+      message = "Correct! I definitely haven't had time to do that... yet.";
+    } else if (text.includes('ceramic')) {
+      message = "True! I've been practicing ceramics in New York for 3 years now — it's my favorite way to unplug.";
+    } else {
+      message = "True! I love film and scriptwriting. My sister and I wrote, directed, and shot a full movie in high school.";
+    }
+    document.getElementById('ttl-result-text-sidebar').textContent = message;
+    document.getElementById('ttl-result-sidebar').style.display = 'block';
+  }
+
+  function resetTTL2() {
+    const btns = document.querySelectorAll('#ttl-options-sidebar button');
+    btns.forEach(b => {
+      b.style.cssText='width:100%;text-align:left;padding:0.55rem 0.75rem;font-size:0.75rem;font-family:DM Sans,sans-serif;background:rgba(196,169,154,0.06);border:1px solid rgba(196,169,154,0.18);color:var(--warm-white);cursor:pointer;transition:all 0.3s;line-height:1.4;opacity:1;';
+      const isLie = b.textContent.includes('50 countries');
+      b.onclick = () => selectTTL2(b, isLie);
+    });
+    document.getElementById('ttl-result-sidebar').style.display='none';
   }
 
   function selectTTL(btn, isLie) {
