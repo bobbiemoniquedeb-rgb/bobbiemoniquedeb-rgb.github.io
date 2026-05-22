@@ -156,7 +156,7 @@
   [data-theme="dark"] .hero-eyebrow { color:#8ca6bd; }
   [data-theme="dark"] .hero-eyebrow::before { background:#8ca6bd; }
   [data-theme="dark"] .hero-subtitle { color:#f0ece6; border-color:#c48a82; }
-  #vibe-label { color:#36454f; font-size:0.62rem; letter-spacing:0.15em; }
+  #vibe-label { color:#36454f; font-size:0.62rem; letter-spacing:0.15em; font-weight:600; }
   [data-theme="dark"] #vibe-label { color:#f0ece6; }
   [data-theme="dark"] .hero-stat-number { color:#c48a82; }
   [data-theme="dark"] .hero-stat-label { color:#f0ece6; }
@@ -246,6 +246,11 @@
   [data-theme="light"] .nav-links a:hover { color:#c48a82; }
   [data-theme="light"] .off-clock-wrap button { background:rgba(255,255,255,0.1) !important; border-color:rgba(255,255,255,0.4) !important; }
   [data-theme="light"] #about .section-sidebar .off-clock-wrap button span { color:#f5f5f0 !important; }
+  [data-theme="light"] #sidebar-quiz p { color:#f5f5f0 !important; }
+  [data-theme="light"] #sidebar-quiz button { color:#f5f5f0 !important; background:rgba(245,245,240,0.06) !important; border-color:rgba(245,245,240,0.2) !important; }
+  [data-theme="light"] #ttl-result-sidebar { border-color:#c48a82 !important; background:rgba(196,138,130,0.1) !important; }
+  [data-theme="light"] #ttl-result-text-sidebar { color:#f5f5f0 !important; }
+  [data-theme="light"] #sidebar-quiz .play-again { color:#c48a82 !important; border-color:#c48a82 !important; }
   [data-theme="light"] #about .section-sidebar .off-clock-wrap button { border-color:rgba(196,138,130,0.7) !important; background:rgba(196,138,130,0.08) !important; }
   [data-theme="light"] #hero-quiz button { color:#36454f !important; }
   [data-theme="light"] #ttl-result { border-color:#c48a82 !important; }
@@ -590,7 +595,7 @@
   <div class="section-body">
     <div class="exp-item">
       <div><p class="exp-date">Oct 2025 – May 2026</p><p class="exp-company">SocialGPT · Remote</p></div>
-      <div><h3 class="exp-role">Video Content Creator</h3><ul class="exp-points"><li>Developed scripted social content around trends and product education, driving a <strong>900%+</strong> lift in average views per post</li><li>Ran A/B tests on ad creative and copy, raising click-through relevance for target audiences</li><li>Created weekly social analytics reports highlighting top-performing posts for the marketing team</li></ul></div>
+      <div><h3 class="exp-role">Creator & Social Strategist</h3><ul class="exp-points"><li>Developed scripted social content around trends and product education, driving a <strong>900%+</strong> lift in average views per post</li><li>Ran A/B tests on ad creative and copy, raising click-through relevance for target audiences</li><li>Created weekly social analytics reports highlighting top-performing posts for the marketing team</li></ul></div>
     </div>
     <div class="exp-item">
       <div><p class="exp-date">Jun 2022 – Present</p><p class="exp-company">Golden Hippo Media · Remote</p></div>
@@ -838,10 +843,7 @@
 
   // Off the clock / Fact Check Me
   function toggleQuiz() {
-    const theme = document.documentElement.getAttribute('data-theme');
-    const quiz = theme === 'dark'
-      ? document.getElementById('sidebar-quiz')
-      : document.getElementById('hero-quiz');
+    const quiz = document.getElementById('sidebar-quiz');
     const arrow = document.getElementById('quiz-arrow');
     const open = quiz.style.display === 'none' || quiz.style.display === '';
     quiz.style.display = open ? 'block' : 'none';
