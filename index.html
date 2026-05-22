@@ -11,19 +11,21 @@
 
   [data-theme="dark"] {
     --dark: #1a1917; --darker: #111110; --warm-white: #f0ece6;
-    --muted: #888480; --border: rgba(196,169,154,0.18);
+    --muted: #8a9a9f; --border: rgba(196,169,154,0.18);
     --nav-bg: rgba(17,17,16,0.7);
+    --taupe: #c48a82;
   }
   [data-theme="light"] {
-    --dark: #ede8df; --darker: #f5f5f0; --warm-white: #1c1714;
-    --muted: #7a6e65; --border: rgba(150,110,80,0.15);
-    --nav-bg: rgba(245,245,240,0.92);
+    --dark: #eee8e0; --darker: #f5f5f0; --warm-white: #36454f;
+    --muted: #7a8a8f; --border: rgba(180,145,130,0.2);
+    --nav-bg: rgba(245,245,240,0.94);
+    --taupe: #c48a82;
   }
 
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
   body { background:var(--darker); color:var(--warm-white); font-family:'DM Sans',sans-serif; font-weight:300; overflow-x:hidden; transition:background 0.4s,color 0.4s;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+
   }
 
   /* NAV */
@@ -148,66 +150,110 @@
   .hero-stat:nth-child(3) { animation-delay:0.5s; }
   .hero-stat:nth-child(4) { animation-delay:0.6s; }
 
-  /* LIGHT MODE */
-  [data-theme="light"] body { background:#f5f5f0; color:#1c1714; }
+
+  /* DARK MODE — Bobbie's palette accents */
+  [data-theme="dark"] .hero-name-accent { color:#c48a82; }
+  [data-theme="dark"] .hero-eyebrow { color:#8ca6bd; }
+  [data-theme="dark"] .hero-eyebrow::before { background:#8ca6bd; }
+  [data-theme="dark"] .hero-subtitle { color:#f0ece6; border-color:#c48a82; }
+  #vibe-label { color:#36454f; font-size:0.62rem; letter-spacing:0.15em; }
+  [data-theme="dark"] #vibe-label { color:#f0ece6; }
+  [data-theme="dark"] .hero-stat-number { color:#c48a82; }
+  [data-theme="dark"] .hero-stat-label { color:#f0ece6; }
+  [data-theme="dark"] .stat-number { color:#c48a82; }
+  [data-theme="dark"] .exp-date { color:#f0ece6; }
+  [data-theme="dark"] .exp-company { color:#8ca6bd; }
+  [data-theme="dark"] .skill-icon { color:#c48a82; }
+  [data-theme="dark"] .skill-list li::before { color:#c48a82; }
+  [data-theme="dark"] .exp-points li::before { color:#c48a82; }
+  [data-theme="dark"] .exp-points li strong { color:#c48a82 !important; }
+  [data-theme="dark"] .section-label { color:#c48a82; }
+  [data-theme="dark"] .contact-heading span { color:#c48a82; }
+  [data-theme="dark"] .contact-arrow { color:#c48a82; }
+  [data-theme="dark"] .footer-name { color:#c48a82; }
+  [data-theme="dark"] .nav-logo { color:#c48a82; }
+  [data-theme="dark"] .slide-bullet span:first-child { color:#c48a82; }
+  [data-theme="dark"] .slide-stat-num { color:#c48a82; }
+  [data-theme="dark"] #showcase [id^="dot-"] { background:#c48a82 !important; }
+  [data-theme="dark"] .contact-email { color:#c48a82; border-color:#c48a82; }
+  [data-theme="dark"] .nav-links a:hover { color:#c48a82; }
+
+  [data-theme="dark"] .photo-circle { box-shadow:0 0 0 1px rgba(196,169,154,0.25),0 0 60px rgba(196,169,154,0.08),0 0 120px rgba(17,17,16,0.8) !important; }
+
+  /* LIGHT MODE — Bobbie's personal palette */
+  [data-theme="light"] body { background:#f5f5f0; color:#36454f; }
   [data-theme="light"] .hero > img[aria-hidden], [data-theme="light"] .hero-skyline, [data-theme="light"] .hero-rain { display:none; }
   [data-theme="light"] .hero-city { background:none; }
   [data-theme="light"] .hero { background:#f5f5f0; }
-  [data-theme="light"] .hero-left { background:#ede8df; }
+  [data-theme="light"] .hero-left { background:#eee8e0; border-right:1px solid rgba(180,145,130,0.15); }
   [data-theme="light"] .hero-right-panel { background:#f5f5f0; }
-  [data-theme="light"] .hero-name { color:#1c1714; }
-  [data-theme="light"] .hero-name-accent { color:#9a7060; }
-  [data-theme="light"] .hero-eyebrow { color:#9a7060; }
-  [data-theme="light"] .hero-eyebrow::before { background:#9a7060; }
-  [data-theme="light"] .hero-subtitle { color:#6b6058; border-color:#c4a99a; }
-  [data-theme="light"] .hero-location { color:rgba(100,80,60,0.35); }
-  [data-theme="light"] .hero-stat { background:#ede8df; border-color:rgba(150,110,80,0.15); }
-  [data-theme="light"] .hero-stat:hover { background:#e4ddd3; }
-  [data-theme="light"] .hero-stat-number { color:#7a5548; }
-  [data-theme="light"] .hero-stat-label { color:#8a7a70; }
+  [data-theme="light"] .hero-name { color:#36454f; }
+  [data-theme="light"] .hero-name-accent { color:#c48a82; }
+  [data-theme="light"] .hero-eyebrow { color:#5a7d60; }
+  [data-theme="light"] .hero-eyebrow::before { background:#5a7d60; }
+  [data-theme="light"] .hero-subtitle { color:#7a8a8f; border-color:#c48a82; }
+  [data-theme="light"] .hero-location { color:rgba(54,69,79,0.3); }
+  [data-theme="light"] .hero-stat { background:#eee8e0; border-color:rgba(180,145,130,0.2); }
+  [data-theme="light"] .hero-stat:hover { background:#e5ddd4; }
+  [data-theme="light"] .hero-stat-number { color:#c48a82; }
+  [data-theme="light"] .hero-stat-label { color:#7a8a8f; }
   [data-theme="light"] .photo-vignette { box-shadow:none !important; }
-  [data-theme="light"] .photo-circle { box-shadow:0 0 0 1px rgba(196,169,154,0.3),0 0 50px rgba(220,160,160,0.3) !important; }
-  [data-theme="light"] .section-sidebar { background:#ede8df; }
-  [data-theme="light"] .about-intro { color:#1c1714; }
-  [data-theme="light"] .about-body, [data-theme="light"] .exp-points li, [data-theme="light"] .skill-list li { color:#4a3f38; }
-  [data-theme="light"] .skill-title, [data-theme="light"] .exp-role { color:#1c1714; }
-  [data-theme="light"] .skill-icon { color:#9a7060; }
-  [data-theme="light"] .exp-date { color:#7a4535; }
-  [data-theme="light"] .exp-company { color:#1c1714; }
-  [data-theme="light"] .stat-number { color:#7a5548; }
-  [data-theme="light"] .section-label { color:#9a7060; }
+  [data-theme="light"] .photo-circle { box-shadow:0 0 0 2px #36454f,0 0 40px rgba(54,69,79,0.15) !important; }
+  [data-theme="light"] .section-sidebar { background:#36454f; }
+  [data-theme="light"] .section-label { color:#c48a82; }
+  [data-theme="light"] .about-intro { color:#36454f; }
+  [data-theme="light"] .about-body { color:#5a6a70; }
+  [data-theme="light"] .exp-points li, [data-theme="light"] .skill-list li { color:#5a6a70; }
+  [data-theme="light"] .skill-title { color:#36454f; }
+  [data-theme="light"] .exp-role { color:#36454f; }
+  [data-theme="light"] .skill-icon { color:#c48a82; }
+  [data-theme="light"] .exp-date { color:#b87870; }
+  [data-theme="light"] .exp-company { color:#36454f; }
+  [data-theme="light"] .exp-points li strong { color:#c48a82 !important; }
+  [data-theme="light"] .stat-number { color:#c48a82; }
+  [data-theme="light"] .stat-label { color:#7a8a8f; }
+  [data-theme="light"] .skill-list li::before { color:#c48a82; }
+  [data-theme="light"] .exp-points li::before { color:#c48a82; }
+  [data-theme="light"] #education .section-sidebar { background:#36454f; }
   [data-theme="light"] #showcase { background:#f5f5f0; }
-  [data-theme="light"] #showcase > div:first-child { background:#f5f5f0; border-color:rgba(150,110,80,0.12); }
-  [data-theme="light"] .slide-info { background:#ede8df !important; }
+  [data-theme="light"] #showcase > div:first-child { background:#f5f5f0; border-color:rgba(180,145,130,0.15); }
+  [data-theme="light"] .slide-info { background:#eee8e0 !important; }
   [data-theme="light"] .slide-media { background:#f5f5f0 !important; }
-  [data-theme="light"] .slide-title { color:#1c1714 !important; }
-  [data-theme="light"] .slide-body { color:#4a3f38 !important; }
-  [data-theme="light"] .slide-bullet span:last-child { color:#4a3f38 !important; }
-  [data-theme="light"] .slide-brand { color:#9a7060 !important; }
-  [data-theme="light"] #showcase [style*="color:#888480"] { color:#7a6e65 !important; }
-  [data-theme="light"] #showcase button { color:#9a7060 !important; border-color:rgba(150,110,80,0.2) !important; }
-  [data-theme="light"] #showcase #slide-counter { color:#7a6e65 !important; }
-  [data-theme="light"] #showcase [id^="dot-"] { background:#c4a99a !important; }
+  [data-theme="light"] .slide-title { color:#36454f !important; }
+  [data-theme="light"] .slide-body { color:#5a6a70 !important; }
+  [data-theme="light"] .slide-bullet span:last-child { color:#5a6a70 !important; }
+  [data-theme="light"] .slide-bullet span:first-child { color:#c48a82 !important; }
+  [data-theme="light"] #showcase button { color:#c48a82 !important; border-color:rgba(216,163,157,0.3) !important; }
+  [data-theme="light"] #showcase #slide-counter { color:#7a8a8f !important; }
+  [data-theme="light"] #showcase [id^="dot-"] { background:#c48a82 !important; }
   [data-theme="light"] .contact { background:#f5f5f0; }
   [data-theme="light"] .contact-city-bg { display:none; }
-  [data-theme="light"] .contact-left { background:#ede8df; }
-  [data-theme="light"] .contact-right { background:#f5f5f0; border-color:rgba(150,110,80,0.12); }
-  [data-theme="light"] .contact-heading { color:#1c1714; }
-  [data-theme="light"] .contact-heading span { color:#9a7060; }
-  [data-theme="light"] .contact-sub { color:#4a3f38; }
-  [data-theme="light"] .contact-link { color:#1c1714; border-color:rgba(150,110,80,0.12); }
-  [data-theme="light"] .contact-link:hover { color:#9a7060; }
-  [data-theme="light"] footer { background:#ede8df; border-color:rgba(150,110,80,0.12); }
-  [data-theme="light"] footer p { color:#7a6e65; }
-  [data-theme="light"] .footer-name { color:#9a7060; }
-  [data-theme="light"] .nav-logo { color:#9a7060; }
-  [data-theme="light"] .nav-links a { color:#7a6e65; }
-  [data-theme="light"] .nav-links a:hover { color:#9a7060; }
+  [data-theme="light"] .contact-left { background:#36454f; }
+  [data-theme="light"] .contact-heading { color:#fff8e7; }
+  [data-theme="light"] .contact-heading span { color:#c48a82; }
+  [data-theme="light"] .contact-sub { color:rgba(255,248,231,0.7); }
+  [data-theme="light"] .contact-right { background:#f5f5f0; border-color:rgba(180,145,130,0.15); }
+  [data-theme="light"] .contact-link { color:#36454f; border-color:rgba(180,145,130,0.15); }
+  [data-theme="light"] .contact-link:hover { color:#c48a82; }
+  [data-theme="light"] .contact-arrow { color:#c48a82; }
+  [data-theme="light"] .contact-link-label { color:#7a8a8f; }
+  [data-theme="light"] .contact-link-value { color:#36454f; }
+  [data-theme="light"] footer { background:#36454f; border-color:rgba(180,145,130,0.15); }
+  [data-theme="light"] footer p { color:rgba(255,248,231,0.6); }
+  [data-theme="light"] .footer-name { color:#c48a82; }
+  [data-theme="light"] .nav-logo { color:#c48a82; }
+  [data-theme="light"] .nav-links a { color:#7a8a8f; }
+  [data-theme="light"] .nav-links a:hover { color:#c48a82; }
+  [data-theme="light"] .off-clock-wrap button { background:rgba(255,255,255,0.1) !important; border-color:rgba(255,255,255,0.4) !important; }
+  [data-theme="light"] #about .section-sidebar .off-clock-wrap button span { color:#f5f5f0 !important; }
+  [data-theme="light"] #about .section-sidebar .off-clock-wrap button { border-color:rgba(196,138,130,0.7) !important; background:rgba(196,138,130,0.08) !important; }
+  [data-theme="light"] #hero-quiz button { color:#36454f !important; }
+  [data-theme="light"] #ttl-result { border-color:#c48a82 !important; }
 
-  /* Show quiz in hero on light mode */
-  [data-theme="light"] .off-clock-wrap { display:block !important; }
-  /* Hide about sidebar quiz in light mode */
-  [data-theme="light"] #about .section-sidebar .off-clock-wrap { display:none !important; }
+  /* Hide quiz only in hero */
+  .hero .off-clock-wrap { display:none !important; }
+  /* Show in about sidebar always */
+  #about .section-sidebar .off-clock-wrap { display:flex !important; flex-direction:column; align-items:flex-end; gap:0.75rem; }
 
   @media (max-width:900px) {
     /* NAV */
@@ -290,9 +336,132 @@
     .photo-circle { width:140px !important; height:140px !important; }
   }
   .exp-points li strong { color:var(--taupe); font-weight:700; letter-spacing:0.01em; }
+
+  /* ── CUSTOM FIGMA CURSOR ── */
+  * { cursor: none !important; }
+  .custom-cursor {
+    width: 24px; height: 24px;
+    border: 2px solid var(--taupe);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background 0.2s, border-color 0.2s;
+  }
+  .custom-cursor::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px; height: 2px;
+    background: var(--taupe);
+  }
+  .custom-cursor::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2px; height: 10px;
+    background: var(--taupe);
+  }
+  .custom-cursor.hover {
+    width: 40px; height: 40px;
+    background: rgba(196,169,154,0.12);
+    border-color: var(--taupe);
+  }
+  .custom-cursor-dot {
+    width: 4px; height: 4px;
+    background: var(--taupe);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+  }
+
+
+
+
+
+  /* ── SHOWCASE IMAGE HOVER ── */
+  #showcase .slide-media a,
+  #showcase .slide-media > div > div {
+    position: relative;
+    overflow: hidden;
+  }
+  #showcase .slide-media img {
+    transition: transform 0.5s ease !important;
+  }
+  #showcase .slide-media a:hover img,
+  #showcase .slide-media > div > div:hover img {
+    transform: scale(1.06) !important;
+  }
+
+
+  /* ── LOADING SCREEN ── */
+  #loader {
+    position: fixed;
+    inset: 0;
+    background: #111110;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+  }
+  #loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .loader-initials {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(5rem, 15vw, 10rem);
+    letter-spacing: 0.1em;
+    color: #c48a82;
+    line-height: 1;
+    animation: loader-pulse 1.5s ease-in-out infinite;
+  }
+  .loader-line {
+    width: 0;
+    height: 1px;
+    background: #c48a82;
+    animation: loader-expand 1.5s ease forwards;
+  }
+  .loader-sub {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #888480;
+    opacity: 0;
+    animation: loader-fadein 0.8s ease 0.8s forwards;
+  }
+  @keyframes loader-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  @keyframes loader-expand {
+    from { width: 0; }
+    to { width: 120px; }
+  }
+  @keyframes loader-fadein {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
 </style>
 </head>
 <body>
+
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-initials">BD</div>
+  <div class="loader-line"></div>
+  <p class="loader-sub">Social Media Strategist</p>
+</div>
 
 <nav>
   <a href="#" class="nav-logo">BD</a>
@@ -304,11 +473,16 @@
       <li><a href="#education">Education</a></li><li><a href="#showcase">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-      <span class="toggle-icon">🌙</span>
-      <div class="toggle-track"><div class="toggle-thumb"></div></div>
-      <span class="toggle-icon">☀️</span>
-    </button>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0.2rem;">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <!-- Moon -->
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c48a82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <div class="toggle-track"><div class="toggle-thumb"></div></div>
+        <!-- Sun -->
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c48a82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <span id="vibe-label" style="font-size:0.5rem;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap;">change the vibe</span>
+    </div>
   </div>
 </nav>
 
@@ -364,6 +538,8 @@
   </div>
   <div class="hero-location">Brooklyn, New York</div>
 </section>
+
+
 
 <!-- ABOUT -->
 <section id="about" class="section-2col">
@@ -454,7 +630,7 @@
       <span style="font-family:'Anton',sans-serif;font-size:0.82rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--taupe);writing-mode:vertical-rl;transform:rotate(180deg);">Showcase</span>
     </div>
     <div style="padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;">
-      <div><h2 style="font-family:'Anton',sans-serif;font-size:1.8rem;letter-spacing:0.04em;color:var(--warm-white);margin-bottom:0.4rem;">PREVIOUS PROJECTS</h2><p style="font-size:0.82rem;color:var(--muted);letter-spacing:0.06em;">Social content, campaigns &amp; brand work</p></div>
+      <div><h2 style="font-family:'Anton',sans-serif;font-size:1.8rem;letter-spacing:0.04em;color:var(--warm-white);margin-bottom:0.4rem;">PREVIOUS PROJECTS</h2><p style="font-size:0.82rem;color:var(--muted);letter-spacing:0.06em;">Content creation, collaborations &amp; campaigns</p></div>
       <div style="display:flex;gap:0.75rem;align-items:center;">
         <button onclick="prevSlide()" style="width:44px;height:44px;border:1px solid rgba(196,169,154,0.18);background:transparent;color:#c4a99a;font-size:1.1rem;cursor:pointer;transition:all 0.3s;" onmouseover="this.style.background='rgba(196,169,154,0.1)'" onmouseout="this.style.background='transparent'">&#8592;</button>
         <span id="slide-counter" style="font-family:'Anton',sans-serif;font-size:0.8rem;color:#888480;letter-spacing:0.1em;min-width:44px;text-align:center;">1 / 4</span>
@@ -732,5 +908,38 @@
     document.getElementById('ttl-result').style.display='none';
   }
 </script>
+
+<!-- Custom Figma cursor -->
+<div class="custom-cursor" id="cursor"></div>
+<div class="custom-cursor-dot" id="cursor-dot"></div>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const dot = document.getElementById('cursor-dot');
+
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    setTimeout(() => {
+      dot.style.left = e.clientX + 'px';
+      dot.style.top = e.clientY + 'px';
+    }, 60);
+  });
+
+  document.querySelectorAll('a, button, [onclick]').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
+</script>
+
+
+<script>
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('loader').classList.add('fade-out');
+    }, 1800);
+  });
+</script>
+
 </body>
 </html>
