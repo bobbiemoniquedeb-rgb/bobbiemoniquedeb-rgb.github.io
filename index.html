@@ -342,38 +342,22 @@
   }
   .exp-points li strong { color:var(--taupe); font-weight:700; letter-spacing:0.01em; }
 
-  /* ── CUSTOM FIGMA CURSOR ── */
+  /* ── CUSTOM CURSOR ── */
   * { cursor: none !important; }
   .custom-cursor {
-    width: 24px; height: 24px;
-    border: 2px solid var(--taupe);
+    width: 12px; height: 12px;
+    background: var(--taupe);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     z-index: 99999;
     transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s, background 0.2s, border-color 0.2s;
-  }
-  .custom-cursor::before {
-    content: '';
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px; height: 2px;
-    background: var(--taupe);
-  }
-  .custom-cursor::after {
-    content: '';
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 2px; height: 10px;
-    background: var(--taupe);
+    transition: transform 0.15s ease, background 0.3s, width 0.2s, height 0.2s;
   }
   .custom-cursor.hover {
-    width: 40px; height: 40px;
-    background: rgba(196,169,154,0.12);
-    border-color: var(--taupe);
+    width: 32px; height: 32px;
+    background: rgba(196,169,154,0.25);
+    border: 1px solid var(--taupe);
   }
   .custom-cursor-dot {
     width: 4px; height: 4px;
@@ -383,6 +367,7 @@
     pointer-events: none;
     z-index: 99999;
     transform: translate(-50%, -50%);
+    transition: transform 0.05s;
   }
 
 
