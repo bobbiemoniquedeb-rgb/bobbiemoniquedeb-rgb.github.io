@@ -10,9 +10,9 @@
   :root { --taupe: #c4a99a; }
 
   [data-theme="dark"] {
-    --dark: #1a1917; --darker: #111110; --warm-white: #f0ece6;
-    --muted: #8a9a9f; --border: rgba(196,169,154,0.18);
-    --nav-bg: rgba(17,17,16,0.7);
+    --dark: #1c1814; --darker: #0e0c09; --warm-white: #d4ccbe;
+    --muted: #6e6658; --border: rgba(140,115,85,0.14);
+    --nav-bg: rgba(14,12,9,0.88);
     --taupe: #c48a82;
   }
   [data-theme="light"] {
@@ -105,10 +105,10 @@
   .slide-info { padding:2rem; border-right:1px solid var(--border); display:flex; flex-direction:column; justify-content:flex-start; }
   .slide-brand { font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--taupe); margin-bottom:0.75rem; font-weight:600; }
   .slide-title { font-family:'Anton',sans-serif; font-size:1.6rem; color:var(--warm-white); margin-bottom:1rem; line-height:1.2; }
-  .slide-body { font-size:1rem; color:var(--muted); line-height:1.8; margin-bottom:1.5rem; }
+  .slide-body { font-size:1rem; color:#f0ece6; line-height:1.8; margin-bottom:1.5rem; }
   .slide-bullet { display:flex; align-items:flex-start; gap:0.6rem; margin-bottom:0.55rem; }
   .slide-bullet span:first-child { color:#c4a99a; flex-shrink:0; margin-top:0.1rem; }
-  .slide-bullet span:last-child { font-size:0.96rem; color:var(--muted); line-height:1.7; }
+  .slide-bullet span:last-child { font-size:0.96rem; color:#f0ece6; line-height:1.7; }
   .slide-stat { display:flex; justify-content:space-between; align-items:baseline; margin-top:0.5rem; padding-top:0.75rem; border-top:1px solid rgba(196,169,154,0.1); }
   .slide-stat-label { font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:#888480; }
   .slide-stat-num { font-family:'Anton',sans-serif; font-size:1.6rem; color:var(--taupe); }
@@ -123,13 +123,13 @@
   .contact-right { position:relative; z-index:2; padding:3.5rem 3.5rem; display:flex; flex-direction:column; justify-content:center; border-left:1px solid var(--border); }
   .contact-heading { font-family:'Anton',sans-serif; font-size:clamp(3rem,6vw,5.5rem); line-height:0.98; letter-spacing:0.03em; margin-bottom:2rem; }
   .contact-heading span { color:var(--taupe); }
-  .contact-sub { font-size:0.88rem; color:var(--muted); line-height:1.75; max-width:320px; margin-bottom:2.5rem; }
+  .contact-sub { font-size:0.88rem; color:#f0ece6; line-height:1.75; max-width:320px; margin-bottom:2.5rem; }
   .contact-email { font-family:'DM Serif Display',serif; font-style:italic; font-size:1.05rem; color:var(--taupe); text-decoration:none; border-bottom:1px solid var(--taupe); padding-bottom:0.3rem; transition:opacity 0.3s; width:fit-content; }
   .contact-email:hover { opacity:0.65; }
   .contact-link { display:flex; align-items:center; justify-content:space-between; text-decoration:none; color:var(--warm-white); padding:1.6rem 0; border-bottom:1px solid var(--border); transition:color 0.3s; }
   .contact-link:hover { color:var(--taupe); }
-  .contact-link-label { font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--taupe); margin-bottom:0.3rem; font-weight:500; }
-  .contact-link-value { font-size:1.3rem; font-family:'DM Serif Display',serif; }
+  .contact-link-label { font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:#c48a82; margin-bottom:0.3rem; font-weight:500; }
+  .contact-link-value { font-size:1.3rem; font-family:'DM Serif Display',serif; color:#f0ece6; }
   .contact-arrow { font-size:1.1rem; color:var(--taupe); transition:transform 0.3s; }
   .contact-link:hover .contact-arrow { transform:translate(4px,-4px); }
 
@@ -153,16 +153,16 @@
 
   /* DARK MODE — Bobbie's palette accents */
   [data-theme="dark"] .hero-name-accent { color:#c48a82; }
-  [data-theme="dark"] .hero-eyebrow { color:#8ca6bd; }
-  [data-theme="dark"] .hero-eyebrow::before { background:#8ca6bd; }
+  [data-theme="dark"] .hero-eyebrow { color:#c48a82; }
+  [data-theme="dark"] .hero-eyebrow::before { background:#c48a82; }
   [data-theme="dark"] .hero-subtitle { color:#f0ece6; border-color:#c48a82; }
-  #vibe-label { color:#36454f; font-size:0.62rem; letter-spacing:0.15em; font-weight:600; }
-  [data-theme="dark"] #vibe-label { color:#f0ece6; }
+  #vibe-label { color:#1c1814; font-size:0.62rem; letter-spacing:0.15em; font-weight:600; }
+  [data-theme="dark"] #vibe-label { color:#d4ccbe; }
   [data-theme="dark"] .hero-stat-number { color:#c48a82; }
   [data-theme="dark"] .hero-stat-label { color:#f0ece6; }
   [data-theme="dark"] .stat-number { color:#c48a82; }
   [data-theme="dark"] .exp-date { color:#f0ece6; }
-  [data-theme="dark"] .exp-company { color:#8ca6bd; }
+  [data-theme="dark"] .exp-company { color:#c48a82; }
   [data-theme="dark"] .skill-icon { color:#c48a82; }
   [data-theme="dark"] .skill-list li::before { color:#c48a82; }
   [data-theme="dark"] .exp-points li::before { color:#c48a82; }
@@ -180,78 +180,78 @@
 
   [data-theme="dark"] .photo-circle { box-shadow:0 0 0 1px rgba(196,169,154,0.25),0 0 60px rgba(196,169,154,0.08),0 0 120px rgba(17,17,16,0.8) !important; }
 
-  /* LIGHT MODE — Bobbie's personal palette */
-  [data-theme="light"] body { background:#f5f5f0; color:#36454f; }
+  /* LIGHT MODE — Aesop palette */
+  [data-theme="light"] body { background:#f2ede4; color:#1c1814; }
   [data-theme="light"] .hero > img[aria-hidden], [data-theme="light"] .hero-skyline, [data-theme="light"] .hero-rain { display:none; }
   [data-theme="light"] .hero-city { background:none; }
-  [data-theme="light"] .hero { background:#f5f5f0; }
-  [data-theme="light"] .hero-left { background:#eee8e0; border-right:1px solid rgba(180,145,130,0.15); }
-  [data-theme="light"] .hero-right-panel { background:#f5f5f0; }
-  [data-theme="light"] .hero-name { color:#36454f; }
+  [data-theme="light"] .hero { background:#f2ede4; }
+  [data-theme="light"] .hero-left { background:#e8e2d8; border-right:1px solid rgba(140,115,85,0.1); }
+  [data-theme="light"] .hero-right-panel { background:#f2ede4; }
+  [data-theme="light"] .hero-name { color:#1c1814; }
   [data-theme="light"] .hero-name-accent { color:#c48a82; }
   [data-theme="light"] .hero-eyebrow { color:#5a7d60; }
   [data-theme="light"] .hero-eyebrow::before { background:#5a7d60; }
-  [data-theme="light"] .hero-subtitle { color:#7a8a8f; border-color:#c48a82; }
-  [data-theme="light"] .hero-location { color:rgba(54,69,79,0.3); }
-  [data-theme="light"] .hero-stat { background:#eee8e0; border-color:rgba(180,145,130,0.2); }
-  [data-theme="light"] .hero-stat:hover { background:#e5ddd4; }
+  [data-theme="light"] .hero-subtitle { color:#6e6050; border-color:#c48a82; }
+  [data-theme="light"] .hero-location { color:rgba(28,24,20,0.25); }
+  [data-theme="light"] .hero-stat { background:#e8e2d8; border-color:rgba(140,115,85,0.12); }
+  [data-theme="light"] .hero-stat:hover { background:#dfd8cc; }
   [data-theme="light"] .hero-stat-number { color:#c48a82; }
-  [data-theme="light"] .hero-stat-label { color:#7a8a8f; }
+  [data-theme="light"] .hero-stat-label { color:#6e6050; }
   [data-theme="light"] .photo-vignette { box-shadow:none !important; }
-  [data-theme="light"] .photo-circle { box-shadow:0 0 0 2px #36454f,0 0 40px rgba(54,69,79,0.15) !important; }
-  [data-theme="light"] .section-sidebar { background:#36454f; }
+  [data-theme="light"] .photo-circle { box-shadow:0 0 0 2px #c48a82,0 0 40px rgba(140,115,85,0.1) !important; }
+  [data-theme="light"] .section-sidebar { background:#1c1814; }
   [data-theme="light"] .section-label { color:#c48a82; }
-  [data-theme="light"] .about-intro { color:#36454f; }
-  [data-theme="light"] .about-body { color:#5a6a70; }
-  [data-theme="light"] .exp-points li, [data-theme="light"] .skill-list li { color:#5a6a70; }
-  [data-theme="light"] .skill-title { color:#36454f; }
-  [data-theme="light"] .exp-role { color:#36454f; }
+  [data-theme="light"] .about-intro { color:#1c1814; }
+  [data-theme="light"] .about-body { color:#4a4038; }
+  [data-theme="light"] .exp-points li, [data-theme="light"] .skill-list li { color:#4a4038; }
+  [data-theme="light"] .skill-title { color:#1c1814; }
+  [data-theme="light"] .exp-role { color:#1c1814; }
   [data-theme="light"] .skill-icon { color:#c48a82; }
-  [data-theme="light"] .exp-date { color:#b87870; }
+  [data-theme="light"] .exp-date { color:#c48a82; }
   [data-theme="light"] .exp-company { color:#36454f; }
   [data-theme="light"] .exp-points li strong { color:#c48a82 !important; }
   [data-theme="light"] .stat-number { color:#c48a82; }
-  [data-theme="light"] .stat-label { color:#7a8a8f; }
+  [data-theme="light"] .stat-label { color:#6e6050; }
   [data-theme="light"] .skill-list li::before { color:#c48a82; }
   [data-theme="light"] .exp-points li::before { color:#c48a82; }
-  [data-theme="light"] #education .section-sidebar { background:#36454f; }
-  [data-theme="light"] #showcase { background:#f5f5f0; }
-  [data-theme="light"] #showcase > div:first-child { background:#f5f5f0; border-color:rgba(180,145,130,0.15); }
-  [data-theme="light"] .slide-info { background:#eee8e0 !important; }
-  [data-theme="light"] .slide-media { background:#f5f5f0 !important; }
-  [data-theme="light"] .slide-title { color:#36454f !important; }
-  [data-theme="light"] .slide-body { color:#5a6a70 !important; }
-  [data-theme="light"] .slide-bullet span:last-child { color:#5a6a70 !important; }
+  [data-theme="light"] #education .section-sidebar { background:#1c1814; }
+  [data-theme="light"] #showcase { background:#f2ede4; }
+  [data-theme="light"] #showcase > div:first-child { background:#f2ede4; border-color:rgba(140,115,85,0.1); }
+  [data-theme="light"] .slide-info { background:#e8e2d8 !important; }
+  [data-theme="light"] .slide-media { background:#f2ede4 !important; }
+  [data-theme="light"] .slide-title { color:#1c1814 !important; }
+  [data-theme="light"] .slide-body { color:#4a4038 !important; }
+  [data-theme="light"] .slide-bullet span:last-child { color:#4a4038 !important; }
   [data-theme="light"] .slide-bullet span:first-child { color:#c48a82 !important; }
   [data-theme="light"] #showcase button { color:#c48a82 !important; border-color:rgba(216,163,157,0.3) !important; }
-  [data-theme="light"] #showcase #slide-counter { color:#7a8a8f !important; }
+  [data-theme="light"] #showcase #slide-counter { color:#6e6050 !important; }
   [data-theme="light"] #showcase [id^="dot-"] { background:#c48a82 !important; }
-  [data-theme="light"] .contact { background:#f5f5f0; }
+  [data-theme="light"] .contact { background:#f2ede4; }
   [data-theme="light"] .contact-city-bg { display:none; }
-  [data-theme="light"] .contact-left { background:#36454f; }
-  [data-theme="light"] .contact-heading { color:#fff8e7; }
+  [data-theme="light"] .contact-left { background:#1c1814; }
+  [data-theme="light"] .contact-heading { color:#d4ccbe; }
   [data-theme="light"] .contact-heading span { color:#c48a82; }
-  [data-theme="light"] .contact-sub { color:rgba(255,248,231,0.7); }
-  [data-theme="light"] .contact-right { background:#f5f5f0; border-color:rgba(180,145,130,0.15); }
-  [data-theme="light"] .contact-link { color:#36454f; border-color:rgba(180,145,130,0.15); }
+  [data-theme="light"] .contact-sub { color:rgba(212,204,190,0.7); }
+  [data-theme="light"] .contact-right { background:#f2ede4; border-color:rgba(140,115,85,0.1); }
+  [data-theme="light"] .contact-link { color:#1c1814; border-color:rgba(140,115,85,0.1); }
   [data-theme="light"] .contact-link:hover { color:#c48a82; }
   [data-theme="light"] .contact-arrow { color:#c48a82; }
-  [data-theme="light"] .contact-link-label { color:#7a8a8f; }
-  [data-theme="light"] .contact-link-value { color:#36454f; }
-  [data-theme="light"] footer { background:#36454f; border-color:rgba(180,145,130,0.15); }
-  [data-theme="light"] footer p { color:rgba(255,248,231,0.6); }
+  [data-theme="light"] .contact-link-label { color:#6e6050; }
+  [data-theme="light"] .contact-link-value { color:#1c1814; }
+  [data-theme="light"] footer { background:#1c1814; border-color:rgba(140,115,85,0.1); }
+  [data-theme="light"] footer p { color:rgba(212,204,190,0.5); }
   [data-theme="light"] .footer-name { color:#c48a82; }
   [data-theme="light"] .nav-logo { color:#c48a82; }
-  [data-theme="light"] .nav-links a { color:#7a8a8f; }
+  [data-theme="light"] .nav-links a { color:#6e6050; }
   [data-theme="light"] .nav-links a:hover { color:#c48a82; }
   [data-theme="light"] .off-clock-wrap button { background:rgba(255,255,255,0.1) !important; border-color:rgba(255,255,255,0.4) !important; }
   [data-theme="light"] #about .section-sidebar .off-clock-wrap button span { color:#f5f5f0 !important; }
   [data-theme="light"] #sidebar-quiz p { color:#f5f5f0 !important; }
   [data-theme="light"] #sidebar-quiz button { color:#f5f5f0 !important; background:rgba(245,245,240,0.06) !important; border-color:rgba(245,245,240,0.2) !important; }
-  [data-theme="light"] #ttl-result-sidebar { border-color:#c48a82 !important; background:rgba(196,138,130,0.1) !important; }
+  [data-theme="light"] #ttl-result-sidebar { border-color:#c48a82 !important; background:rgba(140,115,85,0.1) !important; }
   [data-theme="light"] #ttl-result-text-sidebar { color:#f5f5f0 !important; }
   [data-theme="light"] #sidebar-quiz .play-again { color:#c48a82 !important; border-color:#c48a82 !important; }
-  [data-theme="light"] #about .section-sidebar .off-clock-wrap button { border-color:rgba(196,138,130,0.7) !important; background:rgba(196,138,130,0.08) !important; }
+  [data-theme="light"] #about .section-sidebar .off-clock-wrap button { border-color:rgba(140,115,85,0.6) !important; background:rgba(140,115,85,0.08) !important; }
   [data-theme="light"] #hero-quiz button { color:#36454f !important; }
   [data-theme="light"] #ttl-result { border-color:#c48a82 !important; }
 
@@ -342,33 +342,10 @@
   }
   .exp-points li strong { color:var(--taupe); font-weight:700; letter-spacing:0.01em; }
 
-  /* ── CUSTOM CURSOR ── */
-  * { cursor: none !important; }
-  .custom-cursor {
-    width: 12px; height: 12px;
-    background: var(--taupe);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 99999;
-    transform: translate(-50%, -50%);
-    transition: transform 0.15s ease, background 0.3s, width 0.2s, height 0.2s;
-  }
-  .custom-cursor.hover {
-    width: 32px; height: 32px;
-    background: rgba(196,169,154,0.25);
-    border: 1px solid var(--taupe);
-  }
-  .custom-cursor-dot {
-    width: 4px; height: 4px;
-    background: var(--taupe);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 99999;
-    transform: translate(-50%, -50%);
-    transition: transform 0.05s;
-  }
+  /* CURSOR */
+  * { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='8' fill='%23c48a82' fill-opacity='0.9'/%3E%3C/svg%3E") 10 10, auto !important; }
+  .custom-cursor { display:none; }
+  .custom-cursor-dot { display:none; }
 
 
 
@@ -440,6 +417,16 @@
     from { opacity: 0; transform: translateY(6px); }
     to { opacity: 1; transform: translateY(0); }
   }
+
+
+  /* ACCORDION */
+  .acc-item { border-bottom:1px solid var(--border); cursor:pointer; }
+  .acc-item:first-child { border-top:none; }
+  .acc-header { display:flex; justify-content:space-between; align-items:flex-start; padding:1.5rem 0; gap:1rem; }
+  .acc-arrow { font-size:1.2rem; color:var(--taupe); flex-shrink:0; transition:transform 0.3s; font-weight:300; margin-top:0.25rem; }
+  .acc-item.open .acc-arrow { transform:rotate(45deg); }
+  .acc-body { display:none; padding-bottom:1.5rem; }
+  .acc-item.open .acc-body { display:block; }
 
 </style>
 </head>
@@ -578,21 +565,92 @@
 <section id="experience" class="section-2col">
   <div class="section-sidebar"><span class="section-label">Experience</span></div>
   <div class="section-body">
-    <div class="exp-item">
-      <div><p class="exp-date">Oct 2025 – May 2026</p><p class="exp-company">SocialGPT · Remote</p></div>
-      <div><h3 class="exp-role">Creator & Social Strategist</h3><ul class="exp-points"><li>Developed scripted social content around trends and product education, driving a <strong>900%+</strong> lift in average views per post</li><li>Ran A/B tests on ad creative and copy, raising click-through relevance for target audiences</li><li>Created weekly social analytics reports highlighting top-performing posts for the marketing team</li></ul></div>
+    <!-- ACCORDION EXPERIENCE -->
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-header">
+        <div>
+          <p class="exp-date">Oct 2025 – May 2026</p>
+          <p class="exp-company">SocialGPT · Remote</p>
+          <h3 class="exp-role">Creator & Social Strategist</h3>
+        </div>
+        <span class="acc-arrow">+</span>
+      </div>
+      <div class="acc-body">
+        <ul class="exp-points">
+          <li>Developed scripted social content around trends and product education, driving a <strong>900%+</strong> lift in average views per post</li>
+          <li>Ran A/B tests on ad creative and copy, raising click-through relevance for target audiences</li>
+          <li>Created weekly social analytics reports highlighting top-performing posts for the marketing team</li>
+        </ul>
+      </div>
     </div>
-    <div class="exp-item">
-      <div><p class="exp-date">Jun 2022 – Present</p><p class="exp-company">Golden Hippo Media · Remote</p></div>
-      <div><h3 class="exp-role">Social Media Manager</h3><ul class="exp-points"><li>Lead organic social strategy and content creation across a portfolio of brands, from ideation to publishing</li><li>Manage and mentor two specialists, guiding creative development and aligning deliverables with brand strategy</li><li>Supported cross-channel social and CRM campaigns generating <strong>$358K</strong> in front-end revenue</li><li>Scaled organic social presence by <strong>220%</strong>, improving engagement-to-lead conversion</li></ul></div>
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-header">
+        <div>
+          <p class="exp-date">Jun 2022 – Present</p>
+          <p class="exp-company">Golden Hippo Media · Remote</p>
+          <h3 class="exp-role">Social Media Manager</h3>
+        </div>
+        <span class="acc-arrow">+</span>
+      </div>
+      <div class="acc-body">
+        <ul class="exp-points">
+          <li>Lead organic social strategy and content creation across a portfolio of brands, from ideation to publishing</li>
+          <li>Manage and mentor two specialists, guiding creative development and aligning deliverables with brand strategy</li>
+          <li>Supported cross-channel social and CRM campaigns generating <strong>$358K</strong> in front-end revenue</li>
+          <li>Scaled organic social presence by <strong>220%</strong>, improving engagement-to-lead conversion</li>
+        </ul>
+      </div>
     </div>
-    <div class="exp-item">
-      <div><p class="exp-date">Dec 2021 – Oct 2022</p><p class="exp-company">SET Active · Beverly Hills, CA</p></div>
-      <div><h3 class="exp-role">Social Media Marketing Coordinator</h3><ul class="exp-points"><li>Supported strategic influencer and partnership initiatives designed to expand brand visibility and strengthen relationships with key collaborators</li><li>Conducted audience and competitor analysis to inform positioning, content optimization, and campaign targeting</li><li>Collaborated cross-functionally with creative and marketing teams to translate campaign briefs into data-driven content strategies aligned with business goals</li></ul></div>
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-header">
+        <div>
+          <p class="exp-date">Dec 2021 – Oct 2022</p>
+          <p class="exp-company">SET Active · Beverly Hills, CA</p>
+          <h3 class="exp-role">Social Media Marketing Coordinator</h3>
+        </div>
+        <span class="acc-arrow">+</span>
+      </div>
+      <div class="acc-body">
+        <ul class="exp-points">
+          <li>Supported strategic influencer and partnership initiatives designed to expand brand visibility and strengthen relationships with key collaborators</li>
+          <li>Conducted audience and competitor analysis to inform positioning, content optimization, and campaign targeting</li>
+          <li>Collaborated cross-functionally with creative and marketing teams to translate campaign briefs into data-driven content strategies aligned with business goals</li>
+        </ul>
+      </div>
     </div>
-    <div class="exp-item">
-      <div><p class="exp-date">Oct 2020 – Nov 2021</p><p class="exp-company">Flight Performance Agency · Remote</p></div>
-      <div><h3 class="exp-role">Influencer & Social Marketing Strategist</h3><ul class="exp-points"><li>Led influencer partnerships to boost brand visibility and social engagement</li><li>Owned organic social strategy and content creation, aligning client goals and audience insights into cohesive execution</li><li>Managed daily community engagement to strengthen brand perception and loyalty</li></ul></div>
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-header">
+        <div>
+          <p class="exp-date">2021 – 2024</p>
+          <p class="exp-company">New Edition · Part-time</p>
+          <h3 class="exp-role">Assistant Tour Manager</h3>
+        </div>
+        <span class="acc-arrow">+</span>
+      </div>
+      <div class="acc-body">
+        <ul class="exp-points">
+          <li>Supported national concert tours by coordinating travel, schedules, and backstage logistics for high-profile artists</li>
+          <li>Acted as a key point of contact between talent, management, and crew to ensure smooth operations across cities</li>
+          <li>Handled everything from dressing room setups to last-minute changes with professionalism, discretion, and adaptability in fast-paced environments</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-header">
+        <div>
+          <p class="exp-date">Oct 2020 – Nov 2021</p>
+          <p class="exp-company">Flight Performance Agency · Remote</p>
+          <h3 class="exp-role">Influencer & Social Marketing Strategist</h3>
+        </div>
+        <span class="acc-arrow">+</span>
+      </div>
+      <div class="acc-body">
+        <ul class="exp-points">
+          <li>Led influencer partnerships to boost brand visibility and social engagement</li>
+          <li>Owned organic social strategy and content creation, aligning client goals and audience insights into cohesive execution</li>
+          <li>Managed daily community engagement to strengthen brand perception and loyalty</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -620,7 +678,7 @@
       <span style="font-family:'Anton',sans-serif;font-size:0.82rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--taupe);writing-mode:vertical-rl;transform:rotate(180deg);">Showcase</span>
     </div>
     <div style="padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;">
-      <div><h2 style="font-family:'Anton',sans-serif;font-size:1.8rem;letter-spacing:0.04em;color:var(--warm-white);margin-bottom:0.4rem;">PREVIOUS PROJECTS</h2><p style="font-size:0.82rem;color:var(--muted);letter-spacing:0.06em;">Content creation, collaborations &amp; campaigns</p></div>
+      <div><h2 style="font-family:'Anton',sans-serif;font-size:1.8rem;letter-spacing:0.04em;color:var(--warm-white);margin-bottom:0.4rem;">PREVIOUS PROJECTS</h2><p style="font-size:0.82rem;color:#f0ece6;letter-spacing:0.06em;">Content creation, collaborations &amp; campaigns</p></div>
       <div style="display:flex;gap:0.75rem;align-items:center;">
         <button onclick="prevSlide()" style="width:44px;height:44px;border:1px solid rgba(196,169,154,0.18);background:transparent;color:#c4a99a;font-size:1.1rem;cursor:pointer;transition:all 0.3s;" onmouseover="this.style.background='rgba(196,169,154,0.1)'" onmouseout="this.style.background='transparent'">&#8592;</button>
         <span id="slide-counter" style="font-family:'Anton',sans-serif;font-size:0.8rem;color:#888480;letter-spacing:0.1em;min-width:44px;text-align:center;">1 / 4</span>
@@ -765,7 +823,7 @@
       </div>
       <span class="contact-arrow">↗</span>
     </a>
-    <a href="https://linkedin.com/in/bobbie-debarge" target="_blank" class="contact-link">
+    <a href="https://www.linkedin.com/in/bobbie-debarge-6158551b1/" target="_blank" class="contact-link">
       <div style="display:flex;align-items:center;gap:1rem;">
         <div style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(196,169,154,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c4a99a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -928,5 +986,10 @@
   });
 </script>
 
+<script>
+  function toggleAcc(el) {
+    el.classList.toggle('open');
+  }
+</script>
 </body>
 </html>
