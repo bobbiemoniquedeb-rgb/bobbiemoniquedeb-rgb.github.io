@@ -343,7 +343,6 @@
   .exp-points li strong { color:var(--taupe); font-weight:700; letter-spacing:0.01em; }
 
   /* CURSOR */
-  * { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='8' fill='%23c48a82' fill-opacity='0.9'/%3E%3C/svg%3E") 10 10, auto !important; }
   .custom-cursor { display:none; }
   .custom-cursor-dot { display:none; }
 
@@ -480,9 +479,9 @@
 
       <!-- OFF THE CLOCK - hidden on desktop dark mode, shown in about sidebar -->
       <div class="off-clock-wrap" style="display:none;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);max-width:420px;">
-        <button onclick="toggleQuiz()" id="quiz-trigger" style="display:flex;align-items:center;gap:0.75rem;background:rgba(196,169,154,0.12);border:1px solid rgba(196,169,154,0.5);cursor:pointer;padding:0.6rem 1.2rem;text-align:left;width:fit-content;transition:all 0.3s;" onmouseover="this.style.background='rgba(196,169,154,0.16)';this.style.borderColor='var(--taupe)'" onmouseout="this.style.background='rgba(196,169,154,0.08)';this.style.borderColor='rgba(196,169,154,0.25)'">
-          <span style="font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--warm-white);font-weight:500;">Off the clock</span>
-          <span id="quiz-arrow" style="color:var(--taupe);font-size:0.85rem;transition:transform 0.3s;">&#8597;</span>
+        <button onclick="toggleQuiz()" id="quiz-trigger" style="display:flex;align-items:center;gap:0.75rem;background:#c48a82;border:1px solid #c48a82;cursor:pointer;padding:0.6rem 1.2rem;text-align:left;width:fit-content;transition:all 0.3s;box-shadow:0 2px 12px rgba(196,138,130,0.35);" onmouseover="this.style.background='#b5786f';this.style.borderColor='#b5786f'" onmouseout="this.style.background='#c48a82';this.style.borderColor='#c48a82'">
+          <span style="font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:#1a1a18;font-weight:600;">Off the clock</span>
+          <span id="quiz-arrow" style="color:#1a1a18;font-size:0.85rem;transition:transform 0.3s;">&#8597;</span>
         </button>
         <div id="hero-quiz" style="display:none;margin-top:1.25rem;">
           <p style="font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--warm-white);line-height:1.4;margin-bottom:0.85rem;">Fun Facts — Which is false?</p>
@@ -524,9 +523,9 @@
     <span class="section-label">About</span>
     <!-- OFF THE CLOCK quiz in sidebar -->
     <div class="off-clock-wrap" style="display:flex;flex-direction:column;align-items:flex-end;gap:0.75rem;max-width:160px;">
-      <button onclick="toggleQuiz()" id="quiz-trigger" style="display:flex;align-items:center;gap:0.5rem;background:rgba(196,169,154,0.12);border:1px solid rgba(196,169,154,0.5);cursor:pointer;padding:0.5rem 0.85rem;transition:all 0.3s;" onmouseover="this.style.background='rgba(196,169,154,0.2)'" onmouseout="this.style.background='rgba(196,169,154,0.12)'">
-        <span style="font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--warm-white);font-weight:500;white-space:nowrap;">Off the clock</span>
-        <span id="quiz-arrow" style="color:var(--taupe);font-size:0.8rem;">&#8597;</span>
+      <button onclick="toggleQuiz()" id="quiz-trigger" style="display:flex;align-items:center;gap:0.5rem;background:#c48a82;border:1px solid #c48a82;cursor:pointer;padding:0.5rem 0.85rem;transition:all 0.3s;box-shadow:0 2px 12px rgba(196,138,130,0.35);" onmouseover="this.style.background='#b5786f'" onmouseout="this.style.background='#c48a82'">
+        <span style="font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:#1a1a18;font-weight:600;white-space:nowrap;">Off the clock</span>
+        <span id="quiz-arrow" style="color:#1a1a18;font-size:0.8rem;">&#8597;</span>
       </button>
       <div id="sidebar-quiz" style="display:none;width:220px;text-align:left;">
         <p style="font-family:'DM Serif Display',serif;font-size:0.9rem;color:var(--warm-white);line-height:1.4;margin-bottom:0.75rem;">Fun Facts — Which is false?</p>
@@ -554,7 +553,7 @@
   <div class="section-sidebar"><span class="section-label">Skills</span></div>
   <div style="padding:0;">
     <div class="skills-grid">
-      <div class="skill-card"><span class="skill-icon">↗</span><h3 class="skill-title">STRATEGY & GROWTH</h3><ul class="skill-list"><li>Paid + organic campaigns</li><li>Build and manage multi-platform content calendars (IG, TikTok, YT, FB)</li><li>Drive audience engagement through storytelling and community interaction</li></ul></div>
+      <div class="skill-card"><span class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1.3rem;height:1.3rem;display:block;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span><h3 class="skill-title">STRATEGY & GROWTH</h3><ul class="skill-list"><li>Paid + organic campaigns</li><li>Build and manage multi-platform content calendars (IG, TikTok, YT, FB)</li><li>Drive audience engagement through storytelling and community interaction</li></ul></div>
       <div class="skill-card"><span class="skill-icon">◈</span><h3 class="skill-title">AI-ENHANCED CONTENT</h3><ul class="skill-list"><li>Prompt engineering</li><li>AI-assisted video &amp; design tools (Descript, Runway, Canva AI, MidJourney)</li><li>Repurposing long-form into platform-specific microcontent</li></ul></div>
       <div class="skill-card" style="border-right:none;"><span class="skill-icon">◎</span><h3 class="skill-title">ANALYTICS & OPTIMIZATION</h3><ul class="skill-list"><li>Trend forecasting</li><li>Data-driven solutions</li><li>Performance insights</li><li>AI-driven social listening</li><li>A/B testing (captions, creative, and posting cadence)</li></ul></div>
     </div>
@@ -569,7 +568,7 @@
     <div class="acc-item" onclick="toggleAcc(this)">
       <div class="acc-header">
         <div>
-          <p class="exp-date">Oct 2025 – May 2026</p>
+          <p class="exp-date">Feb 2026 – May 2026</p>
           <p class="exp-company">SocialGPT · Remote</p>
           <h3 class="exp-role">Creator & Social Strategist</h3>
         </div>
@@ -954,28 +953,7 @@
   }
 </script>
 
-<!-- Custom Figma cursor -->
-<div class="custom-cursor" id="cursor"></div>
-<div class="custom-cursor-dot" id="cursor-dot"></div>
-
-<script>
-  const cursor = document.getElementById('cursor');
-  const dot = document.getElementById('cursor-dot');
-
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    setTimeout(() => {
-      dot.style.left = e.clientX + 'px';
-      dot.style.top = e.clientY + 'px';
-    }, 60);
-  });
-
-  document.querySelectorAll('a, button, [onclick]').forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-  });
-</script>
+<!-- Custom cursor removed -->
 
 
 <script>
